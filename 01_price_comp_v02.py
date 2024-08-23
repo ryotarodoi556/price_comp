@@ -59,7 +59,6 @@ sneakers = {
 
 # Ask user if they want to see the instructions
 want_instructions = string_checker("Do you want to see how to use this price comparison tool? (y/n): ", 1, yes_no_list)
-
 if want_instructions == "yes":
     print("This is a price comparison tool for high-end sneakers available at the store. "
           "\nIt asks how much money you have and gives a list of products that fit the budget. "
@@ -77,6 +76,10 @@ if affordable_sneakers:
     print("Affordable sneakers within your budget:")
     for key, sneaker in affordable_sneakers.items():
         print(f"{key}: {sneaker['name']} - ${sneaker['price']}")
+
+    # Recommend Crocs as the best value for money if within budget
+    if 4 in affordable_sneakers:
+        print("\nRecommendation: Crocs offer the best value for money within your budget.")
 
     # User selection loop
     while True:
